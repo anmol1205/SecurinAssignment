@@ -1,23 +1,12 @@
-import java.util.ArrayList;
-
 public class partA2 {
     public static void main(String[] args) {
-        int faces = 6;
-        ArrayList<ArrayList<Integer>> dist = new ArrayList<>();
-
-        for (int i = 1; i <= faces; i++) {
-            ArrayList<Integer> row = new ArrayList<>();
-            for (int j = 1; j <= faces; j++) {
-                row.add(i + j);
+        int[][] arr = new int[6][6];
+        for (int i = 1; i <= 6; i++) {
+            for (int j = 1; j <= 6; j++) {
+                arr[i-1][j-1] = i + j;
+                System.out.printf("(%d, %d) ", i, j);
             }
-            dist.add(row);
-        }
-
-        System.out.println("Distribution of all possible combinations:");
-        
-        for (int i = 0; i < dist.size(); i++) {
-            ArrayList<Integer> row = dist.get(i);
-            System.out.println(row);
+            System.out.println();
         }
     }
 }
